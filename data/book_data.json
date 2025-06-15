@@ -3,7 +3,7 @@
     "id": "001",
     "name": "しばたろう",
     "type": "スタッフ",
-    "image_idle": "../images/shiba.png",
+    "image_idle": "images/shiba.png",
     "visit_count": "-",
     "pet_count": 30,
     "specialties": ["受付", "お茶くみ"],
