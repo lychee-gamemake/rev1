@@ -4,118 +4,22 @@
 <head>
     <meta charset="UTF-8" />
     <title>わんこ図鑑</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background: #fffaf4;
-            color: #444;
-            text-align: center;
-            padding: 20px;
-        }
-
-        button {
-            margin: 5px;
-            padding: 8px 12px;
-            border-radius: 8px;
-            border: none;
-            background: #ffe080;
-            cursor: pointer;
-        }
-
-        .book-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .book-card {
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 12px;
-            padding: 10px;
-            width: 150px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .book-card img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .modal-content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            width: 300px;
-            text-align: center;
-            position: relative;
-        }
-
-        .modal-content img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 14px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .back-button {
-            margin: 10px;
-            padding: 8px 12px;
-            background-color: #ccccff;
-            color: #333;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 30px;
-            transition: background 0.2s;
-            float: left;
-        }
-
-        .back-button:hover {
-            background-color: #aaaaff;
-        }
-    </style>
+    <link rel="stylesheet" href="style/common.css" />
 </head>
 
 <body>
     <a href="index.html" class="back-button">← ホームに戻る</a>
     <br><br>
-    <h1 style="text-align: center; font-size: 60px;">図鑑</h1>
-
-
-
+    <h1>図鑑</h1>
 
     <div id="filter">
         <button onclick="filterType('all')">すべて</button>
         <button onclick="filterType('スタッフ')">スタッフ</button>
         <button onclick="filterType('お客さん')">お客さん</button>
+        <br><br>
     </div>
 
-    <div id="book-list" class="book-container"></div>
+    <div id="book-list" class="container"></div>
 
     <!-- 詳細モーダル -->
     <div id="book-modal" class="modal hidden">
@@ -147,30 +51,29 @@
         function displayBookList(list) {
             const container = document.getElementById('book-list');
             container.innerHTML = '';
-            list.forEach(book => {
+            list.forEach(item => {
                 // visit_count === 0 の場合は非表示（スキップ）
-                if (book.visit_count === 0) return;
+                if (item.visit_count === 0) return;
 
                 const card = document.createElement('div');
-                card.className = 'book-card';
+                card.className = 'card';
 
                 // typeが「お客さん」の場合だけ訪問回数表示
-                const visitInfo = (book.type === "お客さん")
-                    ? `<p>訪問回数：${book.visit_count}回</p>`
+                const visitInfo = (item.type === "お客さん")
+                    ? `<p>訪問回数：${item.visit_count}回</p>`
                     : "";
 
                 card.innerHTML = `
-            <img src="${book.image_idle}" alt="${book.name}" />
-            <h3>${book.name}</h3>
-            <p>${book.type}</p>
+            <img src="${item.image_idle}" alt="${item.name}" />
+            <h3>${item.name}</h3>
+            <p>${item.type}</p>
             ${visitInfo}
         `;
 
-                card.onclick = () => showDetails(book);
+                card.onclick = () => showDetails(item);
                 container.appendChild(card);
             });
         }
-
 
         function filterType(type) {
             if (type === 'all') {

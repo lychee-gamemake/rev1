@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>設備強化</title>
+    <link rel="stylesheet" href="style/common.css" />
+</head>
+
+<body>
+    <a href="index.html" class="back-button">← ホームに戻る</a>
+    <br><br>
+    <h1>強化</h1>
+
+    <div id="equipment-list" class="container"></div>
+
+    <!-- モーダル -->
+    <div id="equipment-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="modal-close" class="close-button">&times;</span>
+            <img id="modal-image" src="" alt="" />
+            <h2 id="modal-name"></h2>
+            <p id="modal-level-name"></p>
+            <p id="modal-description"></p>
+            <button id="upgrade-button">強化する</button>
+        </div>
+    </div>
+
+    <script>
+        let equipmentList = [];
+
+        window.onload = async () => {
+            try {
+                const res = await fetch('data/equipment_data.json');
+                if (!res.ok) throw new Error('データの取得に失敗しました');
+                equipmentList = await res.json();
+                displayEquipmentList(equipmentList);
+                setupModal();
+            } catch (error) {
+                console.error(error);
+                alert('データの読み込み中にエラーが発生しました。');
+            }
+        };
+
+        function displayEquipmentList(list) {
+            const container = document.getElementById('equipment-list');
+            container.innerHTML = '';
+            equipmentList.forEach((item, index) => {
+                const current = item.level;
+                const currentLabel = item.levels[current - 1].label;
+                const next = item.levels[current];
+                const maxLevel = current >= item.levels.length;
+
+                const card = document.createElement('div');
+                card.className = `card level-${item.level}`;
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" />
+                    <h3>${item.name}</h3>
+                    <p>Lv.${current}：${currentLabel}</p>
+                    <button onclick="enhance(${index})" ${maxLevel ? 'disabled' : ''}>
+                    ${maxLevel ? 'MAX' : `${next.cost}コイン`}
+                    </button>
+                `;
+                card.onclick = () => showDetails(item);
+                container.appendChild(card);
+            });
+        }
+
+        function enhance(index) {
+            const item = equipmentList[index];
+            if (item.level < item.levels.length) {
+                item.level++;
+                displayEquipmentList(equipmentList);
+                // TODO: コイン消費処理
+            }
+        }
+
+        function showDetails(id) {
+            const equipment = equipmentList.find(e => e.id === id);
+            if (!equipment) return;
+
+            document.getElementById('modal-image').src = equipment.image;
+            document.getElementById('modal-name').textContent = equipment.name;
+            document.getElementById('modal-level-name').textContent = equipment.level_name;
+            document.getElementById('upgrade-button').onclick = () => upgradeEquipment(equipment.id);
+            document.getElementById('equipment-modal').classList.remove('hidden');
+        }
+
+        function setupModal() {
+            const modal = document.getElementById('equipment-modal');
+            const closeBtn = document.getElementById('modal-close');
+            closeBtn.onclick = () => modal.classList.add('hidden');
+            window.onclick = e => {
+                if (e.target === modal) modal.classList.add('hidden');
+            };
+        }
+
+        function upgradeEquipment(id) {
+            const equipment = equipmentList.find(e => e.id === id);
+            if (!equipment || equipment.level >= 4) {
+                alert('これ以上強化できません');
+                return;
+            }
+
+            equipment.level++;
+            equipment.level_name = equipment.level_names[equipment.level];
+            equipment.description = equipment.descriptions[equipment.level];
+
+            displayEquipmentList(equipmentList);
+            showDetails(id);
+        }
+    </script>
+</body>
+
+</html>

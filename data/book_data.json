@@ -3,18 +3,18 @@
     "id": "001",
     "name": "しばたろう",
     "type": "スタッフ",
-    "image_idle": "../images/shiba.png",
+    "image_idle": "images/shiba.png",
     "visit_count": "-",
     "pet_count": 30,
     "specialties": ["受付", "お茶くみ"],
     "profile1": "赤毛の柴犬",
-    "profile2": "ほんわかキャラの温泉オーナー"
+    "profile2": "のほほんとした性格の温泉オーナー"
   },
   {
     "id": "002",
     "name": "しろいの",
     "type": "お客さん",
-    "image_idle": "../images/guest1.png",
+    "image_idle": "images/guest1.png",
     "visit_count": 10,
     "pet_count": 0,
     "specialties": [],
