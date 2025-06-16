@@ -1,0 +1,67 @@
+@keyframes coinArc {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translate(20px, -200px) scale(0.8);
+        opacity: 0.8;
+    }
+
+    40% {
+        transform: translate(40px, -400px) scale(0.8);
+        opacity: 0.8;
+    }
+
+    60% {
+        transform: translate(60px, -600px) scale(0.7);
+        opacity: 0.7;
+    }
+
+    80% {
+        transform: translate(80px, -800px) scale(0.6);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translate(100px, -1000px) scale(0.5);
+        opacity: 0.5;
+    }
+}
+
+.coin-animating {
+    animation: coinArc 1s ease-in-out forwards;
+    position: fixed;
+    z-index: 999;
+    /* アニメ中のクリックを無効化 */
+    pointer-events: none;
+}
+
+#coin-display {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff8e1;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #444;
+    font-family: sans-serif;
+    margin: 40px 40px 0px 40px;
+    float: right;
+}
+
+#coin-display img {
+    width: 50px;
+    height: 50px;
+}
+
+.coin-icon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    transition: none;
+}

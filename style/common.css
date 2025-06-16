@@ -9,14 +9,15 @@ body {
 h1 {
     font-size: 60px;
     text-align: center;
+    margin-top: 120px;
     color: #444;
 }
 
 button {
     font-size: 25px;
     margin: 5px;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 12px;
     border: none;
     background: #ffe080;
     cursor: pointer;
@@ -24,9 +25,9 @@ button {
 
 #filter button {
     font-size: 30px;
-    padding: 10px 20px;
+    padding: 16px 24px;
     margin: 5px;
-    border-radius: 6px;
+    border-radius: 12px;
 }
 
 #filter {
@@ -122,12 +123,12 @@ button {
 }
 
 .back-button {
-    margin: 10px;
-    padding: 8px 12px;
+    margin: 40px;
+    padding: 16px 24px;
     background-color: #ffe080;
     color: #333;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 12px;
     font-size: 30px;
     transition: background 0.2s;
     float: left;
@@ -135,4 +136,9 @@ button {
 
 .back-button:hover {
     background-color: #aaaaff;
+}
+
+.enhance-button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }

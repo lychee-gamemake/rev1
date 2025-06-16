@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: "Hiragino Maru Gothic Pro", sans-serif;
+    background: #add8e6;
+    overflow: hidden;
+}
+
+#game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url(../../images/background.png) no-repeat center/cover;
+}
+
+#shiba {
+    position: absolute;
+    bottom: 20%;
+    left: 2%;
+    width: 500px;
+}
+
+#speech {
+    position: absolute;
+    bottom: 42%;
+    left: 8%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 30px;
+}
+
+.button {
+    position: absolute;
+    bottom: 15%;
+    width: 180px;
+    height: 130px;
+    border-radius: 20px;
+    border: none;
+    font-size: 30px;
+    background-color: #fff;
+    box-shadow: 2px 2px 0px #999;
+    justify-content: flex-end;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+
+#btn-zukan {
+    left: 10%;
+    background-color: #b6e5ac;
+}
+
+#btn-kyouka {
+    left: 30%;
+    background-color: #f9d3d3;
+}
+
+#btn-kaimono {
+    left: 50%;
+    background-color: #d7c9f2;
+}
+
+#btn-settei {
+    left: 70%;
+    background-color: #cde9f7;
+}
+
+#guest {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    width: 480px;
+    display: none;
+    z-index: 10;
+}
+
+.centered {
+    left: 50% !important;
+    bottom: 50% !important;
+    transform: translate(-50%, 50%);
+}

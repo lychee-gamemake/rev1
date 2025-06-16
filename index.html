@@ -4,93 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <title>わんこ温泉</title>
-  <link rel="stylesheet" href="style/onsen_anime.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: "Hiragino Maru Gothic Pro", sans-serif;
-      background: #add8e6;
-      overflow: hidden;
-    }
-
-    #game {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      background: url(images/background.png) no-repeat center/cover;
-    }
-
-    #shiba {
-      position: absolute;
-      bottom: 20%;
-      left: 2%;
-      width: 500px;
-    }
-
-    #speech {
-      position: absolute;
-      bottom: 44%;
-      left: 8%;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 12px;
-      padding: 8px 12px;
-      font-size: 30px;
-    }
-
-    .button {
-      position: absolute;
-      bottom: 15%;
-      width: 180px;
-      height: 130px;
-      border-radius: 20px;
-      border: none;
-      font-size: 30px;
-      background-color: #fff;
-      box-shadow: 2px 2px 0px #999;
-      justify-content: flex-end;
-      padding-bottom: 6px;
-      cursor: pointer;
-    }
-
-    #btn-zukan {
-      left: 10%;
-      background-color: #b6e5ac;
-    }
-
-    #btn-kyouka {
-      left: 30%;
-      background-color: #f9d3d3;
-    }
-
-    #btn-kaimono {
-      left: 50%;
-      background-color: #d7c9f2;
-    }
-
-    #btn-settei {
-      left: 70%;
-      background-color: #cde9f7;
-    }
-
-    #guest {
-      position: absolute;
-      bottom: 20%;
-      left: 50%;
-      width: 480px;
-      display: none;
-      z-index: 10;
-    }
-
-    .centered {
-      left: 50% !important;
-      bottom: 50% !important;
-      transform: translate(-50%, 50%);
-    }
-  </style>
+  <link rel="stylesheet" href="style/index/main.css" />
+  <link rel="stylesheet" href="style/index/onsen_anime.css" />
+  <link rel="stylesheet" href="style/index/gauge.css" />
+  <link rel="stylesheet" href="style/index/coin.css" />
 </head>
 
 <body>
   <div id="game">
+    <div id="coin-display">
+      <img src="icons/coin.png" alt="わんコイン" />
+      <span id="coin-count">0</span>
+    </div>
+    <div id="status-display">
+      <div>　ごはん：<span id="hunger"></span></div>
+      <div>ごきげん：<span id="mood"></span></div>
+    </div>
     <img id="shiba" src="images/shiba.png" オーナーしば" />
     <div id="speech">ようこそ、わんこの湯へ！</div>
     <img id="guest" src="images/guest1.png" alt="お客さん" />
@@ -117,75 +46,25 @@
     </button>
   </div>
 
+  <script src="js/index/main.js"></script>
+  <script src="js/index/speech.js"></script>
+  <script src="js/index/gauge.js"></script>
+  <script src="js/index/coin.js"></script>
+
   <script>
-    const speech = document.getElementById("speech");
-    const guest = document.getElementById("guest");
-    const shiba = document.getElementById("shiba");
-
-    const linesNormal = [
-      "お客さん、まだかな〜",
-      "今日もぽかぽかいい湯だよ〜",
-      "いっぱいお客さんが来てくれるといいな",
-      "おやつの時間はまだかな？"
-    ];
-    const linesGuest = [
-      "ゆっくりしていってね〜",
-      "湯加減はいかがですか〜",
-    ];
-
-    let guestVisible = false;
-    let speechInterval;
-
-    function startRandomSpeech(lines) {
-      clearInterval(speechInterval);
-      speechInterval = setInterval(() => {
-        const rand = Math.floor(Math.random() * lines.length);
-        speech.textContent = lines[rand];
-        speech.style.display = 'block';
-      }, 5000);
-    }
-
-    function showGuest() {
-      guestVisible = true;
-      guest.style.display = "block";
-      guest.src = "images/guest1.png"; // 通常立ち絵
-      speech.textContent = "お客さんだ！いらっしゃいませ！";
-      shiba.src = "images/shiba_talk.png";
-      startRandomSpeech(linesGuest);
-
-      // 10秒後に入浴画像へ切り替え
-      setTimeout(() => {
-        guest.src = "images/guest1_in.png";
-        guest.classList.add("centered");
-        speech.textContent = "ごゆっくりどうぞ〜";
-
-        // 5分後に帰る
-        setTimeout(() => {
-          hideGuest();
-        }, 10000); // 5秒
-      }, 5000); // 5秒
-    }
-
-    function startGuestLoop() {
-      setInterval(() => {
-        if (!guestVisible) {
-          showGuest();
-        }
-      }, 15000); // 15秒ごとにお客さん来訪
-    }
-
-    function hideGuest() {
-      guestVisible = false;
-      guest.style.display = "none";
-      guest.classList.remove("centered");
-      shiba.src = "images/shiba.png";
-      startRandomSpeech(linesNormal);
-    }
-
     window.onload = () => {
       startRandomSpeech(linesNormal);
       startGuestLoop();
+      startGaugeDecay();
+      updateDisplayGauge();
+      updateDisplayCoin();
     };
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedCoins = localStorage.getItem("coinCount");
+      coinCount = savedCoins ? parseInt(savedCoins) : 0;
+      updateDisplayCoin();
+    });
 
     // ボタンイベント
     document.getElementById("btn-zukan").onclick = () => {

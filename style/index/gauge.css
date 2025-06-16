@@ -1,0 +1,25 @@
+#status-display {
+    font-size: 30px;
+    margin: 40px 40px 40px 40px;
+    padding: 16px 24px;
+    background-color: #fff8e1;
+    color: #444;
+    border-radius: 12px;
+    width: fit-content;
+    max-width: calc(100% - 40px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    float: left;
+}
+
+#status-display div {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gauge-icon {
+    width: 40px;
+    height: 40px;
+}
