@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>わんこ温泉</title>
+  <link rel="stylesheet" href="style/onsen_anime.css" />
   <style>
     body {
       margin: 0;
@@ -77,6 +78,13 @@
       left: 50%;
       width: 480px;
       display: none;
+      z-index: 10;
+    }
+
+    .centered {
+      left: 50% !important;
+      bottom: 50% !important;
+      transform: translate(-50%, 50%);
     }
   </style>
 </head>
@@ -86,6 +94,10 @@
     <img id="shiba" src="images/shiba.png" オーナーしば" />
     <div id="speech">ようこそ、わんこの湯へ！</div>
     <img id="guest" src="images/guest1.png" alt="お客さん" />
+
+    <div class="steam steam1"></div>
+    <div class="steam steam2"></div>
+    <div class="steam steam3"></div>
 
     <button id="btn-zukan" class="button">
       <img src="icons/book.png" alt="図鑑" /><br>
@@ -133,30 +145,46 @@
       }, 5000);
     }
 
-    function toggleGuest() {
-      setInterval(() => {
-        guestVisible = !guestVisible;
-        guest.style.display = guestVisible ? 'block' : 'none';
+    function showGuest() {
+      guestVisible = true;
+      guest.style.display = "block";
+      guest.src = "images/guest1.png"; // 通常立ち絵
+      speech.textContent = "お客さんだ！いらっしゃいませ！";
+      shiba.src = "images/shiba_talk.png";
+      startRandomSpeech(linesGuest);
 
-        if (guestVisible) {
-          // お客さん来訪
-          speech.textContent = "お客さんだ！いらっしゃいませ！";
-          speech.style.display = "block";
-          shiba.src = "images/shiba_talk.png";
-          startRandomSpeech(linesGuest);
+      // 10秒後に入浴画像へ切り替え
+      setTimeout(() => {
+        guest.src = "images/guest1_in.png";
+        guest.classList.add("centered");
+        speech.textContent = "ごゆっくりどうぞ〜";
 
-        } else {
-          // お客さん帰宅
-          shiba.src = "images/shiba.png";
-          startRandomSpeech(linesNormal);
-        }
-      }, 10000); // 10秒ごとに表示/非表示切替
+        // 5分後に帰る
+        setTimeout(() => {
+          hideGuest();
+        }, 10000); // 5秒
+      }, 5000); // 5秒
     }
 
-    // ページ読み込み後に開始
+    function startGuestLoop() {
+      setInterval(() => {
+        if (!guestVisible) {
+          showGuest();
+        }
+      }, 15000); // 15秒ごとにお客さん来訪
+    }
+
+    function hideGuest() {
+      guestVisible = false;
+      guest.style.display = "none";
+      guest.classList.remove("centered");
+      shiba.src = "images/shiba.png";
+      startRandomSpeech(linesNormal);
+    }
+
     window.onload = () => {
       startRandomSpeech(linesNormal);
-      toggleGuest();
+      startGuestLoop();
     };
 
     // ボタンイベント
