@@ -1,0 +1,24 @@
+.card.level-1 {
+    background-color: #fff;
+}
+
+.card.level-2 {
+    background-color: #e6f0ff;
+}
+
+.card.level-3 {
+    background-color: #d1f0a3;
+}
+
+.card.level-4 {
+    background-color: #fff9c4;
+}
+
+.card.level-5 {
+    background-color: #ffe6e6;
+}
+
+.enhance-button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

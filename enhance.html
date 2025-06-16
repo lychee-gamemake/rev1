@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <title>設備強化</title>
     <link rel="stylesheet" href="style/common.css" />
-    <link rel="stylesheet" href="style/index/coin.css" />
+    <link rel="stylesheet" href="style/coin.css" />
+    <link rel="stylesheet" href="style/modal.css" />
+    <link rel="stylesheet" href="style/enhance/enhance_main.css" />
 </head>
 
 <body>
@@ -25,11 +27,10 @@
             <h2 id="modal-name"></h2>
             <p id="modal-level-name"></p>
             <p id="modal-description"></p>
-            <button id="upgrade-button">強化する</button>
         </div>
     </div>
 
-    <script src="js/index/coin.js"></script>
+    <script src="js/coin.js"></script>
     <script>
         let equipmentList = [];
         coinCount = parseInt(localStorage.getItem("coinCount")) || 0;
@@ -58,21 +59,42 @@
                 const next = item.levels[current];
                 const maxLevel = current >= item.levels.length;
                 const cost = maxLevel ? null : next.cost;
+                const isAffordable = !maxLevel && coinCount >= cost;
 
                 const card = document.createElement('div');
                 card.className = `card level-${item.level}`;
                 card.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" />
+                    <img src="${item.image}" alt="${item.name}" class="equipment-image" data-id="${item.id}" />
                     <h3>${item.name}</h3>
                     <p>Lv.${current}：${currentLabel}</p>
-                    <button class="enhance-button" data-index="${index}" data-cost="${cost || 0}" ${maxLevel ? 'disabled' : ''}>
-                    ${maxLevel ? 'MAX' : `${cost}コイン`}
+                    <button class="enhance-button" 
+                        data-index="${index}" 
+                        data-cost="${cost || 0}" 
+                        ${!isAffordable ? 'disabled' : ''}>
+                        ${maxLevel ? 'MAX' : `${cost}コイン`}
                     </button>
                 `;
-                card.onclick = () => showDetails(item.id);
                 container.appendChild(card);
             });
-            updateEnhanceButtons();
+
+            // 画像クリックでモーダル表示
+            document.querySelectorAll('.equipment-image').forEach(img => {
+                img.onclick = () => {
+                    const id = img.getAttribute('data-id');
+                    showDetails(id);
+                };
+            });
+
+            // 強化ボタン処理
+            document.querySelectorAll('.enhance-button').forEach(btn => {
+                btn.onclick = (e) => {
+                    e.stopPropagation(); // モーダル起動を防ぐ
+                    const index = btn.getAttribute('data-index');
+                    enhance(index);
+                };
+            });
+
+            updateDisplayCoin();
         }
 
         function enhance(index) {
@@ -98,10 +120,6 @@
             document.getElementById('modal-name').textContent = equipment.name;
             document.getElementById('modal-level-name').textContent = `Lv.${equipment.level}`;
             document.getElementById('modal-description').textContent = equipment.description;
-            document.getElementById('upgrade-button').onclick = () => {
-                enhance(equipmentList.findIndex(e => e.id === id));
-                showDetails(id);
-            };
             document.getElementById('equipment-modal').classList.remove('hidden');
         }
 
