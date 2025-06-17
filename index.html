@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style/index/onsen_anime.css" />
   <link rel="stylesheet" href="style/index/gauge.css" />
   <link rel="stylesheet" href="style/coin.css" />
+  <link rel="stylesheet" href="style/modal.css" />
 </head>
 
 <body>
@@ -44,6 +45,26 @@
       <img src="icons/set.png" alt="設定" /><br>
       設定
     </button>
+  </div>
+
+  <!-- モーダル -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">×</span>
+      <div id="modalContent">
+        <p>どっちにする？</p>
+        <div class="container">
+          <div class="card" onclick="selectFood('meal')">
+            <img src="icons/meat.png" alt="ごはん">
+            <p>ごはん<br><br><br>ごはん回復</p>
+          </div>
+          <div class="card" onclick="selectFood('snack')">
+            <img src="icons/heart.png" alt="おやつ">
+            <p>おやつ<br><br><br>ごきげん回復</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="js/index/main.js"></script>
