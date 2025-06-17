@@ -30,6 +30,7 @@ function addCoinsToCounter(amount) {
     coinCount += parseInt(amount);
     updateDisplayCoin();
     localStorage.setItem("coinCount", coinCount);
+    showCoinGain(parseInt(amount));
     updateEnhanceButtons();
 }
 
@@ -46,3 +47,22 @@ function updateEnhanceButtons() {
         }
     });
 }
+
+function showCoinGain(amount) {
+    const coinDisplay = document.getElementById("coin-display");
+    const coinText = document.createElement("div");
+    coinText.className = "coin-float";
+    coinText.innerText = `+${amount}`;
+
+    // coinDisplayの下に絶対位置で配置
+    const rect = coinDisplay.getBoundingClientRect();
+    coinText.style.top = `${rect.bottom + window.scrollY + 5}px`;
+
+    document.body.appendChild(coinText);
+
+    // 一定時間後に削除
+    setTimeout(() => {
+        coinText.remove();
+    }, 1500);
+}
+

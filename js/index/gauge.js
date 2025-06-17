@@ -90,7 +90,7 @@ const originalModalContent = `
 	<div class="container">
 		<div class="card" onclick="selectFood('meal')">
 		<img src="icons/meat.png" alt="ごはん">
-		<p>ごはん<br><br><br>ごはん回復</p>
+		<p>ごはん<br><br><br>おなか回復</p>
 	</div>
 	<div class="card" onclick="selectFood('snack')">
 		<img src="icons/heart.png" alt="おやつ">

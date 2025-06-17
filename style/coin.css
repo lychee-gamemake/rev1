@@ -5,7 +5,7 @@
     }
 
     100% {
-        transform: translate(100px, -1600px) scale(0.5);
+        transform: translate(100px, -1400px) scale(0.5);
         opacity: 0.5;
     }
 }
@@ -44,4 +44,29 @@
     height: 100px;
     z-index: 10;
     transition: none;
+}
+
+.coin-float {
+    position: absolute;
+    left: 87%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    animation: floatUp 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 999;
+}
+
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(1.2);
+    }
 }
