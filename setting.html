@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>設定画面</title>
+    <link rel="stylesheet" href="style/common.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9251939652285347"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <a href="index.html" class="back-button">← ホームに戻る</a>
+    <br><br>
+    <h1>設定</h1>
+
+    <button id="resetAllBtn" font-size="30px">データ削除</button>
+
+    <script>
+        const resetAllBtn = document.getElementById("resetAllBtn");
+
+        resetAllBtn.addEventListener("click", () => {
+            if (confirm("本当にデータを全部消しますか？")) {
+                localStorage.clear();
+
+                // ゲージの変数リセット
+                hunger = 3;
+                mood = 3;
+
+                alert("データをすべて削除しました");
+            }
+        });
+    </script>
+</body>
+
+</html>

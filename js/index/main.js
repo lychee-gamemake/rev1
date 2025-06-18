@@ -43,26 +43,28 @@ function hideGuest() {
     shiba.src = "images/shiba.png";
     startRandomSpeech(linesNormal);
 
-    const coinData = { amount: Math.floor(Math.random() * 10 + 5) }; // 5〜14コイン
+    // ランダムなコイン額を生成（5〜14）
+    const amount = Math.floor(Math.random() * 10 + 5);
+
+    // コイン画像を作成
     const coin = document.createElement("img");
     coin.src = "icons/coin.png";
     coin.classList.add("coin-icon");
+    coin.dataset.amount = amount;
 
-    // お客さんがいた位置に出す
-    document.getElementById("game").appendChild(coin);
+    // コインの位置を設定（お客さんの位置）
     coin.style.left = "calc(80% - 30px)";
     coin.style.top = "calc(69% - 30px)";
 
-    // クリックイベント
+    // クリックイベントで加算＆アニメーション
     coin.addEventListener("click", () => {
-        // コインアニメーション
         coin.classList.add("coin-animating");
-        // アニメ終了後に削除＆加算
         setTimeout(() => {
             coin.remove();
-            coinCount += coinData.amount;
-            addCoinsToCounter(coin.dataset.amount || 5);
+            addCoinsToCounter(amount);
         }, 1000);
     });
+
+    // 画面に追加
     document.getElementById("game").appendChild(coin);
 }

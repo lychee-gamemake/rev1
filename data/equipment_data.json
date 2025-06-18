@@ -4,11 +4,26 @@
     "name": "バスタオル",
     "level": 1,
     "levels": [
-      { "label": "ボロボロ", "cost": null},
-      { "label": "ゴワゴワ", "cost": 200},
-      { "label": "ふつう", "cost": 500},
-      { "label": "ふんわり", "cost": 1000},
-      { "label": "最高級", "cost": 2000}
+      {
+        "label": "ボロボロ",
+        "cost": null
+      },
+      {
+        "label": "ゴワゴワ",
+        "cost": 200
+      },
+      {
+        "label": "ふつう",
+        "cost": 500
+      },
+      {
+        "label": "ふんわり",
+        "cost": 1000
+      },
+      {
+        "label": "最高級",
+        "cost": 2000
+      }
     ],
     "image": "images/towel.png"
   },
@@ -17,11 +32,26 @@
     "name": "マット",
     "level": 2,
     "levels": [
-      { "label": "ボロボロ", "cost": null},
-      { "label": "ゴワゴワ", "cost": 200},
-      { "label": "ふつう", "cost": 500},
-      { "label": "ふんわり", "cost": 1000},
-      { "label": "最高級", "cost": 2000}
+      {
+        "label": "ボロボロ",
+        "cost": null
+      },
+      {
+        "label": "ゴワゴワ",
+        "cost": 200
+      },
+      {
+        "label": "ふつう",
+        "cost": 500
+      },
+      {
+        "label": "ふんわり",
+        "cost": 1000
+      },
+      {
+        "label": "最高級",
+        "cost": 2000
+      }
     ],
     "image": "images/mat.png"
   }

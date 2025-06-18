@@ -1,5 +1,6 @@
 let hunger = 6;
 let mood = 6;
+
 const MAX_GAUGE = 6;
 const DECAY_INTERVAL_MS = 1000 * 60 * 60 * 4; // 4時間
 const STORAGE_KEY = "wanwan_gauge_data";
@@ -14,9 +15,18 @@ function renderGaugeImage(value, iconFullPath, iconEmptyPath) {
 }
 
 function updateDisplayGauge() {
-    document.getElementById("hunger").innerHTML = renderGaugeImage(hunger, "icons/meat.png", "icons/meat_gray.png");
-    document.getElementById("mood").innerHTML = renderGaugeImage(mood, "icons/heart.png", "icons/heart_gray.png");
+    const hungerElem = document.getElementById("hunger");
+    const moodElem = document.getElementById("mood");
+
+    if (hungerElem) {
+        hungerElem.innerHTML = renderGaugeImage(hunger, "icons/meat.png", "icons/meat_gray.png");
+    }
+
+    if (moodElem) {
+        moodElem.innerHTML = renderGaugeImage(mood, "icons/heart.png", "icons/heart_gray.png");
+    }
 }
+
 
 function saveGaugeData() {
     const data = {
@@ -70,8 +80,15 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 //　モーダル起動
-document.getElementById("hunger").addEventListener("click", () => openModal('hunger'));
-document.getElementById("mood").addEventListener("click", () => openModal('mood'));
+const hungerElem = document.getElementById("hunger");
+if (hungerElem) {
+    hungerElem.addEventListener("click", () => openModal('hunger'));
+}
+
+const moodElem = document.getElementById("mood");
+if (moodElem) {
+    moodElem.addEventListener("click", () => openModal('mood'));
+}
 
 let currentTarget = "";
 

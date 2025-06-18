@@ -22,15 +22,18 @@ function animateCoinToDisplay(coin) {
     // アニメ終了後に削除＆加算
     setTimeout(() => {
         coin.remove();
-        addCoinsToCounter(coin.dataset.amount || 5);
+        addCoinsToCounter(coin.dataset.amount);
     }, 1000);
 }
 
 function addCoinsToCounter(amount) {
+    const before = coinCount; // 追加前のコイン数
     coinCount += parseInt(amount);
+    const added = coinCount - before; // 実際に増えた分を計算
+
     updateDisplayCoin();
     localStorage.setItem("coinCount", coinCount);
-    showCoinGain(parseInt(amount));
+    showCoinGain(added);
     updateEnhanceButtons();
 }
 

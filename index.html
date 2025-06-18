@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="style/index/gauge.css" />
   <link rel="stylesheet" href="style/coin.css" />
   <link rel="stylesheet" href="style/modal.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9251939652285347"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -87,6 +89,7 @@
       updateDisplayCoin();
     });
 
+
     // ボタンイベント
     document.getElementById("btn-zukan").onclick = () => {
       window.location.href = "book.html";
@@ -95,7 +98,9 @@
       window.location.href = "enhance.html";
     };
     document.getElementById("btn-kaimono").onclick = () => alert("買い物へ");
-    document.getElementById("btn-settei").onclick = () => alert("設定へ");
+    document.getElementById("btn-settei").onclick = () => {
+      window.location.href = "setting.html";
+    }
   </script>
 
 </body>
