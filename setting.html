@@ -14,7 +14,13 @@
     <br><br>
     <h1>設定</h1>
 
-    <button id="resetAllBtn" font-size="30px">データ削除</button>
+    <button id="resetAllBtn" style="font-size: 30px; width: 500px; background-color: red; color: white;">
+        データ削除
+    </button><br><br>
+    <button id="policyBtn" style="font-size: 30px; width: 500px;">プライバシーポリシー</button><br><br>
+    <button id="contactBtn" style="font-size: 30px; width: 500px;">お問い合わせ</button><br><br>
+    <button id="aboutBtn" style="font-size: 30px; width: 500px;">このサイトについて</button><br><br>
+
 
     <script>
         const resetAllBtn = document.getElementById("resetAllBtn");
@@ -30,6 +36,16 @@
                 alert("データをすべて削除しました");
             }
         });
+
+        document.getElementById("policyBtn").onclick = () => {
+            window.location.href = "policy.html";
+        };
+        document.getElementById("contactBtn").onclick = () => {
+            window.location.href = "contact.html";
+        };
+        document.getElementById("aboutBtn").onclick = () => {
+            window.location.href = "about.html";
+        }
     </script>
 </body>
 

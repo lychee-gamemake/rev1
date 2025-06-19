@@ -13,6 +13,10 @@ h1 {
     color: #444;
 }
 
+p {
+    font-size: 30px;
+}
+
 button {
     font-size: 25px;
     margin: 5px;
