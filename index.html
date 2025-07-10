@@ -14,46 +14,37 @@
 </head>
 
 <body>
-  <div id="game">
-    <div id="coin-display">
-      <img src="icons/coin.png" alt="わんコイン" />
-      <span id="coin-count">0</span>
-    </div>
-    <div id="status-display">
+
+  <header>
+    <div id="status-display" class="status">
       <div>　おなか：<span id="hunger"></span></div>
       <div>ごきげん：<span id="mood"></span></div>
     </div>
-    <img id="shiba" src="images/shiba.png" オーナーしば" />
+    <div id="level-display" class="status">
+      <img src="icons/level.png" alt="温泉レベル" />
+      温泉Lv.1
+    </div>
+    <div id="coin-display" class="status">
+      <img src="icons/coin.png" alt="わんコイン" />
+      <span id="coin-count">0</span>
+    </div>
+  </header>
+
+  <div id="game">
+    <img id="shiba" src="images/shiba.png" alt="オーナーしば" />
     <div id="speech">ようこそ、わんこの湯へ！</div>
-    <img id="guest" src="images/guest1.png" alt="お客さん" />
 
     <div class="steam steam1"></div>
     <div class="steam steam2"></div>
     <div class="steam steam3"></div>
-
-    <button id="btn-zukan" class="button">
-      <img src="icons/book.png" alt="図鑑" /><br>
-      図鑑
-    </button>
-    <button id="btn-kyouka" class="button">
-      <img src="icons/power.png" alt="強化" /><br>
-      強化
-    </button>
-    <button id="btn-kaimono" class="button">
-      <img src="icons/shop.png" alt="買い物" /><br>
-      買物
-    </button>
-    <button id="btn-settei" class="button">
-      <img src="icons/set.png" alt="設定" /><br>
-      設定
-    </button>
   </div>
 
   <!-- モーダル -->
+  <!-- ✅ ごはん/おやつ選択モーダル -->
   <div id="modal" class="modal hidden">
     <div class="modal-content">
       <span class="close-button" onclick="closeModal()">×</span>
-      <div id="modalContent">
+      <div id="foodModalContent">
         <p>どっちにする？</p>
         <div class="container">
           <div class="card" onclick="selectFood('meal')">
@@ -69,46 +60,59 @@
     </div>
   </div>
 
+  <!-- ✅ メニューモーダル -->
+  <div id="menu-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">×</span>
+      <p>どこへ行く？</p>
+      <div class="container">
+        <div class="card" onclick="navigateTo('book.html')">
+          <img src="icons/book.png" alt="図鑑">
+          <p>図鑑</p>
+        </div>
+        <div class="card" onclick="navigateTo('enhance.html')">
+          <img src="icons/power.png" alt="強化">
+          <p>強化</p>
+        </div>
+        <div class="card" onclick="navigateTo('shop.html')">
+          <img src="icons/shop.png" alt="買い物">
+          <p>買い物</p>
+        </div>
+        <div class="card" onclick="navigateTo('setting.html')">
+          <img src="icons/set.png" alt="設定">
+          <p>設定</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ 履歴表示用モーダル -->
+  <div id="history-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeHistoryModal()">×</span>
+      <h3>来訪履歴</h3>
+      <div id="history-list" style="max-height:300px; overflow:auto;"></div>
+      <button onclick="clearHistoryDisplay()">履歴を消す</button>
+    </div>
+  </div>
+
   <footer>
-    <a href="policy.html">プライバシーポリシー</a> |
-    <a href="contact.html">お問い合わせ</a> |
-    <a href="about.html">このサイトについて</a>
+    <div id="menu-display" class="status">
+      <img src="icons/menu.png" alt="メニュー" />
+      メニュー<br>
+    </div>
+
+    <div id="history-display" class="status">
+      <img src="icons/history.png" alt="訪問履歴" />
+      訪問履歴<br>
+    </div>
   </footer>
 
   <script src="js/index/main.js"></script>
   <script src="js/index/speech.js"></script>
   <script src="js/index/gauge.js"></script>
+  <script src="js/index/visit.js"></script>
   <script src="js/coin.js"></script>
-
-  <script>
-    window.onload = () => {
-      startRandomSpeech(linesNormal);
-      startGuestLoop();
-      startGaugeDecay();
-      updateDisplayGauge();
-      updateDisplayCoin();
-    };
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const savedCoins = localStorage.getItem("coinCount");
-      coinCount = savedCoins ? parseInt(savedCoins) : 0;
-      updateDisplayCoin();
-    });
-
-
-    // ボタンイベント
-    document.getElementById("btn-zukan").onclick = () => {
-      window.location.href = "book.html";
-    };
-    document.getElementById("btn-kyouka").onclick = () => {
-      window.location.href = "enhance.html";
-    };
-    document.getElementById("btn-kaimono").onclick = () => alert("買い物へ");
-    document.getElementById("btn-settei").onclick = () => {
-      window.location.href = "setting.html";
-    }
-  </script>
-
 </body>
 
 </html>

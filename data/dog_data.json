@@ -1,0 +1,833 @@
+[
+  {
+    "id": 0,
+    "breed": "柴犬",
+    "color": "レッド",
+    "comment": "のほほんとした性格の温泉オーナー",
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/shiba.png"
+  },
+  {
+    "id": 1,
+    "breed": "雑種",
+    "color": "白",
+    "rarity": 1,
+    "comment": "優しげな目をした白い雑種。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 2,
+    "breed": "雑種",
+    "color": "黒",
+    "rarity": 1,
+    "comment": "黒毛がピカピカ。無言で通う常連わんこ。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest2.png"
+  },
+  {
+    "id": 3,
+    "breed": "雑種",
+    "color": "レッド",
+    "rarity": 1,
+    "comment": "日向ぼっこが好きな茶色の雑種。のんびり湯を楽しむ。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest3.png"
+  },
+  {
+    "id": 4,
+    "breed": "トイプードル",
+    "color": "レッド",
+    "rarity": 1,
+    "comment": "ふわふわでおしゃれ好き。レッドの毛並みが自慢。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 5,
+    "breed": "トイプードル",
+    "color": "シルバー",
+    "rarity": 1,
+    "comment": "銀色の毛が輝く。いつもシャンプーのいい香りがする。",
+    "condition": {
+      "type": "furnitureInstalled",
+      "target": "シャンプー"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 6,
+    "breed": "トイプードル",
+    "color": "ホワイト",
+    "rarity": 1,
+    "comment": "湯気の中にふわっと浮かぶ真っ白わんこ。",
+    "condition": {
+      "type": "furnitureUpgrade",
+      "target": "シャンプー"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 7,
+    "breed": "ダックスフンド",
+    "color": "レッド",
+    "rarity": 1,
+    "comment": "短足でも温泉では堂々としている。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 8,
+    "breed": "ダックスフンド",
+    "color": "クリーム",
+    "rarity": 1,
+    "comment": "湯上がりのタオル使いがプロ。",
+    "condition": {
+      "type": "furnitureInstalled",
+      "target": "バスタオル"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 9,
+    "breed": "ダックスフンド",
+    "color": "ブラック",
+    "rarity": 1,
+    "comment": "ツヤツヤ黒毛。ふわふわタオルが大好き。",
+    "condition": {
+      "type": "furnitureUpgrade",
+      "target": "バスタオル"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 10,
+    "breed": "チワワ",
+    "color": "レッド",
+    "rarity": 1,
+    "comment": "小さな体に大きなプライド。湯加減にうるさい。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 11,
+    "breed": "チワワ",
+    "color": "クリーム",
+    "rarity": 1,
+    "comment": "ふわふわマットでくつろぎタイムを過ごすのが好き。",
+    "condition": {
+      "type": "furnitureInstalled",
+      "target": "マット"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 12,
+    "breed": "チワワ",
+    "color": "ブラックタン",
+    "rarity": 1,
+    "comment": "いつもマットの上で王様気分になっている。",
+    "condition": {
+      "type": "furnitureUpgrade",
+      "target": "マット"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 13,
+    "breed": "ポメラニアン",
+    "color": "レッド",
+    "rarity": 1,
+    "comment": "もふもふ界の王様。湯気でさらにふくらむ。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 14,
+    "breed": "ポメラニアン",
+    "color": "クリーム",
+    "rarity": 1,
+    "comment": "ドライヤーでふわふわマシマシ。",
+    "condition": {
+      "type": "furnitureInstalled",
+      "target": "ドライヤー"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 15,
+    "breed": "ポメラニアン",
+    "color": "ブラック",
+    "rarity": 1,
+    "comment": "ドライヤーで仕上げた毛並みは一級品。触れたくなるふわふわ。",
+    "condition": {
+      "type": "furnitureUpgrade",
+      "target": "ドライヤー"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 16,
+    "breed": "シーズー",
+    "color": "ホワイトゴールド",
+    "rarity": 1,
+    "comment": "のんびり屋の癒し系。いつも湯船でうとうと。",
+    "condition": {
+      "type": "furnitureInstalled",
+      "target": "掃除用具"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 17,
+    "breed": "マルチーズ",
+    "color": "ホワイト",
+    "rarity": 1,
+    "comment": "ブラシで整えた毛並みが自慢。",
+    "condition": {
+      "type": "furnitureInstalled",
+      "target": "ブラシ"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 18,
+    "breed": "ミニチュアシュナウザー",
+    "color": "ソルトペッパー",
+    "rarity": 1,
+    "comment": "キリッとした顔で湯船に入るおすましさん。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 19,
+    "breed": "ミニチュアシュナウザー",
+    "color": "ホワイト",
+    "rarity": 1,
+    "comment": "白毛を保つための努力は惜しまない。",
+    "condition": {
+      "type": "furnitureUpgrade",
+      "target": "掃除用具"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 20,
+    "breed": "ミニチュアシュナウザー",
+    "color": "ブラック",
+    "rarity": 1,
+    "comment": "黒毛が湯に映えるクールなわんこ。",
+    "condition": {
+      "type": "furnitureUpgrade",
+      "target": "掃除用具"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest2.png"
+  },
+  {
+    "id": 21,
+    "breed": "コーギー",
+    "color": "レッドホワイト",
+    "rarity": 1,
+    "comment": "ぷりぷりのお尻がチャームポイント。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 22,
+    "breed": "コーギー",
+    "color": "ブラックタン",
+    "rarity": 1,
+    "comment": "いつも温泉に向かってダッシュしている。",
+    "condition": {
+      "type": "equipmentInstalled",
+      "target": "ウォーターサーバ"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 23,
+    "breed": "パグ",
+    "color": "シルバー",
+    "rarity": 2,
+    "comment": "温泉に入る前も入った後もしわしわフェイス。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 24,
+    "breed": "パグ",
+    "color": "アプリコット",
+    "rarity": 2,
+    "comment": "快適さにこだわる温泉評論家。",
+    "condition": {
+      "type": "innComfort",
+      "target": 2000
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 25,
+    "breed": "ビーグル",
+    "color": "トライカラー",
+    "rarity": 2,
+    "comment": "鼻が利く探検家。温泉の香りに夢中。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 26,
+    "breed": "ビーグル",
+    "color": "レモン＆ホワイト",
+    "rarity": 2,
+    "comment": "湯上がりの毛並みが爽やか。",
+    "condition": {
+      "type": "itemLevel",
+      "target": [
+        "シャンプー",
+        "リンス"
+      ],
+      "level": 10
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 27,
+    "breed": "フレンチブルドッグ",
+    "color": "ホワイト",
+    "rarity": 2,
+    "comment": "ムチムチボディで入浴する湯船の主。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 28,
+    "breed": "フレンチブルドッグ",
+    "color": "ブリンドル",
+    "rarity": 2,
+    "comment": "じっと動かず温泉を楽しむ。",
+    "condition": {
+      "type": "itemLevel",
+      "target": [
+        "バスタオル",
+        "マット"
+      ],
+      "level": 10
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 29,
+    "breed": "フレンチブルドッグ",
+    "color": "パイド",
+    "rarity": 2,
+    "comment": "湯上がりの過ごし方にこだわりがある。",
+    "condition": {
+      "type": "itemLevel",
+      "target": [
+        "バスタオル",
+        "マット"
+      ],
+      "level": 11
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 30,
+    "breed": "キャバリア",
+    "color": "ブレンハイム",
+    "rarity": 2,
+    "comment": "優雅な毛並みで貴族感が溢れている。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 31,
+    "breed": "キャバリア",
+    "color": "トライカラー",
+    "rarity": 2,
+    "comment": "快適さを求めて温泉を渡り歩いている。",
+    "condition": {
+      "type": "innComfort",
+      "target": 3000
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 32,
+    "breed": "シェルティ",
+    "color": "セーブル",
+    "rarity": 2,
+    "comment": "ふさふさの毛で静かに湯を楽しむ。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 33,
+    "breed": "シェルティ",
+    "color": "トライカラー",
+    "rarity": 2,
+    "comment": "ブラッシング命。毛並みは芸術品。",
+    "condition": {
+      "type": "furnitureUpgrade",
+      "target": "ブラシ"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 34,
+    "breed": "パピヨン",
+    "color": "ホワイト＆レッド",
+    "rarity": 2,
+    "comment": "耳が蝶のようにひらひら。湯船でも軽やか。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 35,
+    "breed": "パピヨン",
+    "color": "ホワイト＆ブラック",
+    "rarity": 2,
+    "comment": "ドライヤーで耳の毛がふわっと舞う。",
+    "condition": {
+      "type": "furnitureUpgrade",
+      "target": "ドライヤー"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 36,
+    "breed": "ラブラドールレトリバー",
+    "color": "イエロー",
+    "rarity": 3,
+    "comment": "元気な大型犬。湯船で泳ぎたがる。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 37,
+    "breed": "ラブラドールレトリバー",
+    "color": "ブラック",
+    "rarity": 3,
+    "comment": "快適さを追求する温泉マスター。",
+    "condition": {
+      "type": "innComfort",
+      "target": 5000
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 38,
+    "breed": "ゴールデンレトリバー",
+    "color": "ゴールド",
+    "rarity": 3,
+    "comment": "優しさのかたまり。湯船で微笑む。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 39,
+    "breed": "ゴールデンレトリバー",
+    "color": "クリーム",
+    "rarity": 3,
+    "comment": "湯船でふわふわの毛が輝く。",
+    "condition": {
+      "type": "innComfort",
+      "target": 5000
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 40,
+    "breed": "秋田犬",
+    "color": "レッド",
+    "rarity": 3,
+    "comment": "凛とした佇まい。静かに湯を味わう。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 41,
+    "breed": "秋田犬",
+    "color": "ホワイト",
+    "rarity": 3,
+    "comment": "白毛が湯に映えて神々しい。",
+    "condition": {
+      "type": "innComfort",
+      "target": 6000
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 42,
+    "breed": "ボーダーコリー",
+    "color": "ブラック＆ホワイト",
+    "rarity": 3,
+    "comment": "賢さNo.1。温泉評論家。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 43,
+    "breed": "ボーダーコリー",
+    "color": "レッド＆ホワイト",
+    "rarity": 3,
+    "comment": "掃除チェックを欠かさない綺麗好き。",
+    "condition": {
+      "type": "itemLevelMax",
+      "target": "掃除用具"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 44,
+    "breed": "ジャックラッセルテリア",
+    "color": "ホワイト＆タン",
+    "rarity": 3,
+    "comment": "元気いっぱい。湯船で跳ねる。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 45,
+    "breed": "ジャックラッセルテリア",
+    "color": "ホワイト＆ブラック",
+    "rarity": 3,
+    "comment": "湯上がりのタオルさばきが職人級。",
+    "condition": {
+      "type": "itemLevelMax",
+      "target": "バスタオル"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 46,
+    "breed": "ペキニーズ",
+    "color": "ホワイト",
+    "rarity": 3,
+    "comment": "小さな皇帝。湯船で堂々と鎮座。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 47,
+    "breed": "ペキニーズ",
+    "color": "フォーン",
+    "rarity": 3,
+    "comment": "リンスの香りに包まれてうっとり。",
+    "condition": {
+      "type": "itemLevelMax",
+      "target": "リンス"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 48,
+    "breed": "スピッツ",
+    "color": "ホワイト",
+    "rarity": 4,
+    "comment": "温泉の妖精。湯けむりの中でほのかに光る白毛。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 49,
+    "breed": "シベリアンハスキー",
+    "color": "ブラック＆ホワイト",
+    "rarity": 4,
+    "comment": "クールな見た目に反して温泉好き。湯船でとろける。",
+    "condition": null,
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 50,
+    "breed": "シベリアンハスキー",
+    "color": "レッド＆ホワイト",
+    "rarity": 4,
+    "comment": "マットの上でくつろぐ姿が王者の風格。",
+    "condition": {
+      "type": "itemLevelMax",
+      "target": "マット"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 51,
+    "breed": "バーニーズマウンテンドッグ",
+    "color": "トライカラー",
+    "rarity": 4,
+    "comment": "静かに通い続ける重鎮。語らずとも温泉を愛す。",
+    "condition": {
+      "type": "itemLevelMax",
+      "target": "ウォーターサーバ"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 52,
+    "breed": "サモエド",
+    "color": "ホワイト",
+    "rarity": 4,
+    "comment": "真っ白な毛が風に舞う。湯けむりの王者。",
+    "condition": {
+      "type": "itemLevelMax",
+      "target": "ドライヤー"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 53,
+    "breed": "ボルゾイ",
+    "color": "ホワイト",
+    "rarity": 4,
+    "comment": "優雅な姿で湯船に浮かぶ。まるで絵画。",
+    "condition": {
+      "type": "itemLevelMax",
+      "target": "シャンプー"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 54,
+    "breed": "アフガンハウンド",
+    "color": "クリーム",
+    "rarity": 4,
+    "comment": "長い毛が湯に揺れて幻想的。",
+    "condition": {
+      "type": "itemLevelMax",
+      "target": "ブラシ"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  },
+  {
+    "id": 55,
+    "breed": "カピバラ",
+    "color": "レッド",
+    "rarity": 5,
+    "comment": "温泉愛は誰にも負けない…犬？",
+    "condition": {
+      "type": "allFacilitiesMax"
+    },
+    "visitCount": 0,
+    "ribbon": null,
+    "firstVisitDate": null,
+    "isFavorite": false,
+    "image_idle": "images/guest1.png"
+  }
+]

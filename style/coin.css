@@ -18,26 +18,6 @@
     pointer-events: none;
 }
 
-#coin-display {
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: #fff8e1;
-    padding: 16px 24px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #444;
-    font-family: sans-serif;
-    margin: 40px 40px 0px 40px;
-    float: right;
-}
-
-#coin-display img {
-    width: 50px;
-    height: 50px;
-}
-
 .coin-icon {
     position: absolute;
     width: 100px;

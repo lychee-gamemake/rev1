@@ -15,7 +15,7 @@
 .modal-content {
     font-size: 25px;
     line-height: 0.5;
-    background: #fff;
+    background: #fffaf0;
     padding: 20px;
     border-radius: 12px;
     width: 600px;
@@ -45,21 +45,50 @@
     padding: 10px;
     width: 200px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
 }
 
 .card img {
-    width: 100%;
+    width: 50%;
     border-radius: 8px;
 }
 
 .close-button {
     position: absolute;
-    top: 10px;
-    right: 14px;
-    font-size: 30px;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
     cursor: pointer;
 }
 
 .hidden {
     display: none;
+}
+
+#history-list {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 2px dashed #ffbc42;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 30px;
+    line-height: 1.6;
+}
+
+.modal-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 22px;
+    background-color: #ffd36e;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-content button:hover {
+    background-color: #ffbc42;
 }

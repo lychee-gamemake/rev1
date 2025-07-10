@@ -1,8 +1,8 @@
-let hunger = 6;
-let mood = 6;
+let hunger = 3;
+let mood = 3;
 
-const MAX_GAUGE = 6;
-const DECAY_INTERVAL_MS = 1000 * 60 * 60 * 4; // 4時間
+const MAX_GAUGE = 3;
+const DECAY_INTERVAL_MS = 1000 * 60 * 60 * 6; // 4時間
 const STORAGE_KEY = "wanwan_gauge_data";
 
 function renderGaugeImage(value, iconFullPath, iconEmptyPath) {
@@ -80,14 +80,9 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 //　モーダル起動
-const hungerElem = document.getElementById("hunger");
+const hungerElem = document.getElementById("status-display");
 if (hungerElem) {
-    hungerElem.addEventListener("click", () => openModal('hunger'));
-}
-
-const moodElem = document.getElementById("mood");
-if (moodElem) {
-    moodElem.addEventListener("click", () => openModal('mood'));
+    hungerElem.addEventListener("click", () => openModal('status-display'));
 }
 
 let currentTarget = "";
@@ -99,7 +94,7 @@ function openModal(target) {
 
 function closeModal() {
     document.getElementById("modal").classList.add("hidden");
-    document.getElementById("modalContent").innerHTML = originalModalContent;
+    document.getElementById("foodModalContent").innerHTML = originalModalContent;
 }
 
 const originalModalContent = `
@@ -142,7 +137,7 @@ function selectFood(type) {
         }
     }
 
-    document.getElementById("modalContent").innerHTML = `
+    document.getElementById("foodModalContent").innerHTML = `
         <p>${text}</p>
         <img src="${image}" alt="しばたろう">
     `;
