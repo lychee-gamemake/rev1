@@ -5,10 +5,11 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
+        /* bodyがスクロールしないように */
+        overflow: hidden;
     }
 
-    header,
-    footer {
+    header {
         background-color: #fff8e1;
         padding: 16px 24px;
         display: flex;
@@ -16,8 +17,33 @@
         align-items: center;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         font-size: 30px;
+        top: 0;
+        left: 0;
+        right: 0;
         height: 110px;
+        position: fixed;
+        z-index: 1000;
+        /* ヘッダーは上に */
     }
+
+    footer {
+        background-color: #fff8e1;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        /* 上方向の影に変更 */
+        font-size: 30px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 110px;
+        position: fixed;
+        z-index: 999;
+        /* ヘッダーより低めにして被らないように */
+    }
+
 
     main {
         flex-grow: 1;
@@ -61,10 +87,13 @@
     }
 
     #game {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
+        position: absolute;
+        top: 110px;
+        bottom: 110px;
+        left: 0;
+        right: 0;
         background: url(../../images/background.png) no-repeat center/cover;
+        overflow-y: auto;
     }
 
     #shiba {
