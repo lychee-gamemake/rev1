@@ -6,7 +6,6 @@
   <title>わんこ温泉</title>
   <link rel="stylesheet" href="style/index/main.css" />
   <link rel="stylesheet" href="style/index/onsen_anime.css" />
-  <link rel="stylesheet" href="style/index/gauge.css" />
   <link rel="stylesheet" href="style/coin.css" />
   <link rel="stylesheet" href="style/modal.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9251939652285347"
@@ -17,14 +16,19 @@
 
   <header>
     <div id="status-display" class="status">
-      <div>　おなか：<span id="hunger"></span></div>
-      <div>ごきげん：<span id="mood"></span></div>
+      <div class="status-row">
+        　おなか：<span id="hunger"></span>
+      </div>
+      <div class="status-row">
+        ごきげん：<span id="mood"></span>
+      </div>
     </div>
     <div id="level-display" class="status">
       <img src="icons/level.png" alt="温泉レベル" />
       温泉Lv.1
     </div>
     <div id="coin-display" class="status">
+      コイン：
       <img src="icons/coin.png" alt="わんコイン" />
       <span id="coin-count">0</span>
     </div>
@@ -101,7 +105,6 @@
       <img src="icons/menu.png" alt="メニュー" />
       メニュー<br>
     </div>
-
     <div id="history-display" class="status">
       <img src="icons/history.png" alt="訪問履歴" />
       訪問履歴<br>

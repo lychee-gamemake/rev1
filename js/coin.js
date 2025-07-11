@@ -4,32 +4,31 @@ function updateDisplayCoin() {
     document.getElementById("coin-count").textContent = coinCount;
 }
 
-function animateCoinToDisplay(coin) {
+// コインのアニメーション（回収時）
+function animateCoinToDisplay(coin, totalAmount = null) {
     const rect = coin.getBoundingClientRect();
 
-    // 元の位置を固定
     coin.style.position = "fixed";
     coin.style.left = rect.left + "px";
     coin.style.top = rect.top + "px";
     coin.style.width = rect.width + "px";
     coin.style.height = rect.height + "px";
     coin.style.pointerEvents = "none";
-    coin.style.zIndex = 999;
+    coin.style.zIndex = 10000; // ヘッダーより前面に出す
 
-    // アニメーション用クラスを追加
     coin.classList.add("coin-animating");
 
-    // アニメ終了後に削除＆加算
+    // アニメーション後に削除して加算
     setTimeout(() => {
         coin.remove();
-        addCoinsToCounter(coin.dataset.amount);
     }, 1000);
 }
 
+// コイン加算処理
 function addCoinsToCounter(amount) {
-    const before = coinCount; // 追加前のコイン数
+    const before = coinCount;
     coinCount += parseInt(amount);
-    const added = coinCount - before; // 実際に増えた分を計算
+    const added = coinCount - before;
 
     updateDisplayCoin();
     localStorage.setItem("coinCount", coinCount);
@@ -37,6 +36,7 @@ function addCoinsToCounter(amount) {
     updateEnhanceButtons();
 }
 
+// コインの強化ボタン状態更新
 function updateEnhanceButtons() {
     const buttons = document.querySelectorAll(".enhance-button");
     buttons.forEach(button => {
@@ -51,21 +51,19 @@ function updateEnhanceButtons() {
     });
 }
 
+// コイン増加のフロート表示
 function showCoinGain(amount) {
     const coinDisplay = document.getElementById("coin-display");
     const coinText = document.createElement("div");
     coinText.className = "coin-float";
     coinText.innerText = `+${amount}`;
 
-    // coinDisplayの下に絶対位置で配置
     const rect = coinDisplay.getBoundingClientRect();
     coinText.style.top = `${rect.bottom + window.scrollY + 5}px`;
 
     document.body.appendChild(coinText);
 
-    // 一定時間後に削除
     setTimeout(() => {
         coinText.remove();
     }, 1500);
 }
-

@@ -14,7 +14,8 @@
         padding: 16px 24px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: stretch;
+        /* ← 子要素を同じ高さに */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         font-size: 30px;
         top: 0;
@@ -22,8 +23,7 @@
         right: 0;
         height: 110px;
         position: fixed;
-        z-index: 1000;
-        /* ヘッダーは上に */
+        z-index: 100;
     }
 
     footer {
@@ -31,9 +31,8 @@
         padding: 16px 24px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: stretch;
         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        /* 上方向の影に変更 */
         font-size: 30px;
         bottom: 0;
         left: 0;
@@ -41,9 +40,24 @@
         height: 110px;
         position: fixed;
         z-index: 999;
-        /* ヘッダーより低めにして被らないように */
     }
 
+    /* ヘッダー・フッターの子要素を分割エリアにして中央揃え */
+    header>div,
+    footer>div {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #coin-display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 30px;
+    }
 
     main {
         flex-grow: 1;
@@ -68,6 +82,28 @@
     #coin-display img {
         width: 50px;
         height: 50px;
+        object-fit: contain;
+    }
+
+    /* ステータス表示エリア全体 */
+    #status-display {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 30px;
+    }
+
+    /* 「おなか」や「ごきげん」1行ずつ */
+    .status-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* アイコン画像サイズ調整 */
+    #status-display img {
+        width: 40px;
+        height: 40px;
         object-fit: contain;
     }
 
